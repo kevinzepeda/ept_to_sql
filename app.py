@@ -5,7 +5,7 @@ from get_ept import downloader
 
 def ericsson_data():
     filename = downloader()
-    with zipfile.ZipFile('EPT_ATT_UMTS_LTE_2021-03-12.zip', 'r') as zip_ref:
+    with zipfile.ZipFile(filename + '.zip', 'r') as zip_ref:
         zip_ref.extractall('EPT')
         parser('EPT/' + filename +'.xlsx')
 
